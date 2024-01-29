@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        width: 300px;
+        height: 300px;
+        background: blue;
+      }
+      .container2 {
+        width: 300px;
+        height: 30px;
+        background: blue;
+      }
+
+      .clip-path-circle {
+        /* 创建了一个半径为200像素的圆形。元素内的内容将被剪裁成这个圆形，而圆形外的内容将不显示 */
+        clip-path: circle(200px);
+      }
+
+      .clip-path-polygon {
+        /* 
+        第一个点(0% 100%)位于元素的左下角。
+        第二个点(100% 100%)位于右下角。
+        第三个点(275px 0)从左上角向右移动275像素。
+        最后一个点(0 0)在左上角，完成了这个形状。
+        这个clip-path创建了一个形状，从左下角开始，横向到右下角，然后到左上角向右275像素的位置，
+        最后回到左上角。这实际上创建了一个顶部被斜切的效果。这种形状在网页中可用于创造有趣的视觉效果。
+        */
+        clip-path: polygon(0% 100%, 100% 100%, 275px 0, 0 0);
+      }
+    </style>
+  </head>
+  <body>
+    clip-path-circle:
+    <div class="container clip-path-circle"></div>
+    clip-path-polygon:
+    <div class="container2 clip-path-polygon"></div>
+  </body>
+</html>
