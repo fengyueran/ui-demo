@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="400"
+      style="border: 1px solid #000000"
+    >
+      Your browser does not support the HTML5 canvas tag.</canvas
+    >
+
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+
+      // 设置画布大小
+      var width = canvas.width;
+      var height = canvas.height;
+
+      // 贝塞尔曲线控制点
+      var p0 = { x: 0, y: height }; // 起点
+      var p1 = { x: 0.1 * width, y: height - 0.7 * height }; // 控制点1
+      var p2 = { x: width, y: height - 0.1 * height }; // 控制点2
+      var p3 = { x: width, y: 0 }; // 终点
+
+      // 绘制贝塞尔曲线路径
+      ctx.beginPath();
+      ctx.moveTo(p0.x, p0.y);
+      ctx.bezierCurveTo(p1.x, p1.y, p2.x, p2.y, p3.x, p3.y);
+      ctx.strokeStyle = "blue";
+      ctx.stroke();
+
+      // 绘制控制点和控制线
+      ctx.fillStyle = "red";
+      ctx.strokeStyle = "red";
+      ctx.lineWidth = 1;
+
+      // 绘制控制点
+      ctx.beginPath();
+      ctx.arc(p1.x, p1.y, 5, 0, 2 * Math.PI);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(p2.x, p2.y, 5, 0, 2 * Math.PI);
+      ctx.fill();
+
+      // 绘制控制线
+      ctx.beginPath();
+      ctx.moveTo(p0.x, p0.y);
+      ctx.lineTo(p1.x, p1.y);
+      ctx.lineTo(p2.x, p2.y);
+      ctx.lineTo(p3.x, p3.y);
+      ctx.stroke();
+    </script>
+  </body>
+</html>
