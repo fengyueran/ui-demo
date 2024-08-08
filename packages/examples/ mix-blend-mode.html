@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mix Blend Mode: Hard Light</title>
+    <style>
+      .box {
+        background-color: rgb(88, 208, 99);
+        color: rgb(255, 255, 255);
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+      }
+
+      .background {
+        cursor: pointer;
+        height: 4891px;
+        pointer-events: auto;
+        inset: 0px;
+        overflow: hidden;
+        position: absolute;
+        z-index: 10000;
+        background-color: rgba(0, 0, 0, 0.5);
+        mix-blend-mode: hard-light;
+      }
+      .blend {
+        position: absolute;
+        background-color: gray;
+        height: 54px;
+        left: 0x;
+        pointer-events: auto;
+        top: 0;
+        width: 285px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">HOW DOES IT WORK</div>
+
+    <div class="background"><div class="blend"></div></div>
+  </body>
+</html>

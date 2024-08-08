@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        width: 80vw;
+        height: 800px;
+        display: flex;
+        gap: 16px;
+      }
+      .box {
+        height: 60px;
+        /* 
+        在 Flexbox 布局中，flex-grow 属性定义了项目的放大比例。如果所有项目的 flex-grow 属性都相同，
+        则它们将等比例地占用容器中的额外空间。但如果其中一个项目的初始尺寸就比其他项目大，
+        那么即使 flex-grow 是相同的，这个项目的最终尺寸也会比其他项目大。
+        */
+        flex-grow: 1;
+        background: blue;
+        border: 1px solid black;
+        /* 
+       如果设置 flex-basis: 0，则两个 .box 将完全依据 flex-grow 分配宽度，忽略其内容大小。
+        */
+        flex-basis: 0;
+      }
+
+      .text {
+        font-size: 180px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        1231232312312312313132123123123123123123123123132132123
+      </div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
